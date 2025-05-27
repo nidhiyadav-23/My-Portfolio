@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="About Nidhi Yadav - Web Developer and AI Enthusiast">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Nidhi Yadav</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .about-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .about-container img {
+      width: 80%;
+      max-width: 300px;
+      height: 160px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin: 15px 0;
+    }
+
+    .typing-text {
+      font-size: 1.5em;
+      color: #007bff;
+      font-weight: bold;
+      height: 30px;
+    }
+
+    .bio {
+      max-width: 700px;
+      margin-top: 20px;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .skills {
+      display: flex;
+      gap: 10px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .skill {
+      background: #007bff;
+      color: #fff;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 1em;
+      transition: transform 0.3s;
+    }
+
+    .skill:hover {
+      background: #0056b3;
+      transform: scale(1.1);
+    }
+
+    .social-icons {
+      margin-top: 25px;
+    }
+
+    .social-icons a {
+      color: #007bff;
+      font-size: 1.8em;
+      margin: 0 12px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #0056b3;
+    }
+
+    .resume-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .resume-btn:hover {
+      background: #218838;
+    }
+
+    /* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container, .section, .card, .project, .box {
+    flex-direction: column !important;
+    width: 100% !important;
+    margin: 10px auto !important;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  nav, header, footer {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  body {
+    padding: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="about-container">
+    <img src="nid.pic.jpg" alt="Profile Picture">
+    <h1>Hi, I'm Nidhi Yadav</h1>
+    <p class="typing-text"></p>
+
+    <p class="bio">
+      I’m a 3rd-year B.Tech AIML student with a strong passion for developing web applications with advanced UI/UX and applying AI to real-world problems. I'm enthusiastic about solving logical challenges, working with emerging technologies, and building innovative solutions in the fields of Web Development, Machine Learning, and NLP.
+    </p>
+
+    <div class="skills">
+      <span class="skill">HTML</span>
+      <span class="skill">CSS</span>
+      <span class="skill">Javacript</span>
+      <span class="skill">Java</span>
+      <span class="skill">Python</span>
+      <span class="skill">AIML</span>
+      <span class="skill">Deep Learning</span>
+      <span class="skill">NLP</span>
+      <span class="skill">Problem Solving</span>
+      
+
+    </div>
+
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/nidhi-yadav-38176534b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/nidhiyadav-23" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:nidhiyadav0823@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <a href="Resume..pdf" class="resume-btn" download>📄 Download Resume</a>
+  </div>
+
+  <script>
+    const text = ["Software Engineer", "Web Developer", "ML Enthusiast", "Problem Solver"];
+    let index = 0;
+    let charIndex = 0;
+    const typingElement = document.querySelector(".typing-text");
+
+    function typeEffect() {
+      if (charIndex < text[index].length) {
+        typingElement.textContent += text[index].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeEffect, 100);
+      } else {
+        setTimeout(eraseEffect, 1500);
+      }
+    }
+
+    function eraseEffect() {
+      if (charIndex > 0) {
+        typingElement.textContent = text[index].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseEffect, 50);
+      } else {
+        index = (index + 1) % text.length;
+        setTimeout(typeEffect, 500);
+      }
+    }
+
+    typeEffect();
+  </script>
+</body>
+</html>
